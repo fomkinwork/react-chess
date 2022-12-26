@@ -28,6 +28,23 @@ export class Board {
         return this.cells[y][x]
     }
 
+    public getCopyBoard (): Board {
+        const newBoard = new Board();
+        newBoard.cells = this.cells;
+        return newBoard;
+    }
+
+    public highlightCell (selectedCell : Cell | null) {
+        for(let i = 0; i < this.cells.length; i++) {
+            const row = this.cells[i]
+            for(let j = 0; j < row.length; j++) {
+                const target = row[j]
+                //Получаем фигуру, которая стоит на выбранной ячейке и вызываем метод
+                target.available = !!selectedCell?.figure?.canMove(target)
+            }
+        }
+    }
+
     private addPawns () {
         for(let i = 0; i < 8; i++) {
             new Pawn(Colors.WHITE,this.getCells(i,1));

@@ -1,4 +1,4 @@
-import React, {FC, useState} from 'react';
+import React, {FC, useEffect, useState} from 'react';
 import {Board} from "./models/Board";
 import CellComponent from "./CellComponent";
 import {Cell} from "./models/Cell";
@@ -13,9 +13,29 @@ const BoardComponent: FC<IBoardComponent> = ({board, setBoard}) => {
     const [selectedCell, setSelectedCell] = useState<Cell | null>(null)
 
     function cellOnClick (cell: Cell) {
-        if (cell.figure) {
+        if(selectedCell && selectedCell !== cell && selectedCell.figure?.canMove(cell)) {
+            selectedCell.moveFigure(cell);
+            setSelectedCell(null);
+            updateBoard()
+        } else {
             setSelectedCell(cell)
         }
+    }
+
+    useEffect(()=> {
+        highlightCell()
+    },[selectedCell])
+
+    //Подсвечиваем ячейку и ререндерим доску
+    function highlightCell () {
+        board.highlightCell(selectedCell)
+        updateBoard()
+    }
+
+    //Обновляем доску
+    function updateBoard () {
+        const newBoard = board.getCopyBoard()
+        setBoard(newBoard)
     }
 
     return (
