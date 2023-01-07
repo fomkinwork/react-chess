@@ -14,10 +14,8 @@ export class King extends Figure {
     }
 
     canMove(target: Cell): boolean {
-        if(!super.canMove(target)) {
+        if(!super.canMove(target))
             return false;
-        } else {
-            return true;
-        }
+        return true;
     }
 }

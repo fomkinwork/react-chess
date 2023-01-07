@@ -1,6 +1,6 @@
-import { Board } from "./Board";
-import { Colors } from "./Colors";
-import { Figure } from "./figures/Figure";
+import {Board} from "./Board";
+import {Colors} from "./Colors";
+import {Figure} from "./figures/Figure";
 
 export class Cell {
     readonly x: number;
@@ -23,6 +23,13 @@ export class Cell {
 
     isEmpty(): boolean {
         return this.figure === null
+    }
+
+    isEnemy(target: Cell): boolean {
+        if(target.figure) {
+            return this.figure?.color !== target.figure.color
+        }
+        return false
     }
 
     isEmptyVertical (target: Cell) {
@@ -71,7 +78,6 @@ export class Cell {
         for (let i = 1; i < absY; i++) {
             if (!this.board.getCells(this.x + dx * i, this.y + dy * i).isEmpty())
                 return false
-            console.log(this.board)
         }
         return true
     }
@@ -81,9 +87,17 @@ export class Cell {
         this.figure.cell = this
     }
 
+    addLostFigure (figure: Figure) {
+        figure.color === Colors.BLACK ?
+            this.board.lostBlackFigures.push(figure) : this.board.lostWhiteFigures.push(figure)
+    }
+
     moveFigure(target: Cell) {
-        if(this.figure?.canMove(target)){
+        if(this.figure && this.figure?.canMove(target)){
             this.figure?.moveFigure(target)
+            if (target.figure) {
+                this.addLostFigure(target.figure)
+            }
             target.setFigure(this.figure);
             this.figure = null;
         }
