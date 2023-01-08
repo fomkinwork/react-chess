@@ -6,6 +6,7 @@ import {Board} from './components/models/Board';
 import {Player} from "./components/models/Player";
 import {Colors} from "./components/models/Colors";
 import LostFigures from "./components/LostFigures";
+import Timer from "./components/Timer";
 
 
 const App = () => {
@@ -33,6 +34,7 @@ const App = () => {
 
   return (
         <div className="app">
+            <Timer currentPlayer={currentPlayer} restart={restart}/>
             <BoardComponent
             board={board}
             setBoard={setBoard}

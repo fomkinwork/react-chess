@@ -2,18 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="478f2f0d-e617-4d24-80ea-45f36e63429f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/LostFigures.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/Timer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BoardComponent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BoardComponent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/models/Board.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/models/Board.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/models/Cell.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/models/Cell.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/models/Player.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/models/Player.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/models/figures/Figure.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/models/figures/Figure.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/models/figures/King.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/models/figures/King.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/models/figures/Knight.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/models/figures/Knight.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/models/figures/Pawn.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/models/figures/Pawn.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +75,7 @@
       <workItem from="1671045173299" duration="4521000" />
       <workItem from="1671049812578" duration="7545000" />
       <workItem from="1671557827794" duration="788000" />
-      <workItem from="1672075681926" duration="11319000" />
+      <workItem from="1672075681926" duration="13272000" />
     </task>
     <servers />
   </component>
